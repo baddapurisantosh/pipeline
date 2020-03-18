@@ -9,7 +9,7 @@ node {
  
    
     stage ('package') {
-        rtMaven.run pom: 'maven-example/pom.xml', goals: 'clean package'
+        rtMaven.run pom: 'maven-example/pom.xml', goals: 'clean test'
     }
     
 }
