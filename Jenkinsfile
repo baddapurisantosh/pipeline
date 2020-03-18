@@ -1,6 +1,15 @@
 node {
-    stage "Create build output"
+    def server
+    def buildInfo
+    def rtMaven
     
-    // Make the output directory.
-    sh "mvn package"
+    stage ('Clone') {
+        git url: 'https://github.com/jfrog/project-examples.git'
+    }
+ 
+   
+    stage ('package') {
+        rtMaven.run pom: 'maven-example/pom.xml', goals: 'clean package'
+    }
+    
 }
