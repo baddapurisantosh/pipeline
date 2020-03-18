@@ -1,6 +1,8 @@
 node {
-    stage "Create build output"
-      
-     echo 'this is the first stage'
-   
- }
+	stage (‘Build’ {
+		echo 'building the pipeline'
+	}
+	stage (‘Test’) {
+		echo 'Testing the pipeline'
+	}
+}
