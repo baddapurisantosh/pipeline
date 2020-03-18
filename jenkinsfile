@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    tools {
+        maven 'apache-maven-3.0.3' 
+    }
+    stages {
+        stage('gitcheckout') {
+            steps {
+                git 'https://github.com/yankils/hello-world.git'
+            }
+        }
+        stage('mvnpackage'){
+            steps {
+                   sh 'mvn compile'
+            }
+        }
+    }
+}
