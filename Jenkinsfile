@@ -1,8 +1,6 @@
 node {
-	stage (Build) {
-		echo 'building the pipeline'
-	}
-	stage (Test) {
-		echo 'Testing the pipeline'
-	}
+    stage "Create build output"
+    
+    // Make the output directory.
+    sh "mvn package"
 }
