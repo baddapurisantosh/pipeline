@@ -1,8 +1,8 @@
 node {
-	stage (‘Build’ {
+	stage (Build) {
 		echo 'building the pipeline'
 	}
-	stage (‘Test’) {
+	stage (Test) {
 		echo 'Testing the pipeline'
 	}
 }
