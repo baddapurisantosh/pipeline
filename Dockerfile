@@ -1,6 +1,5 @@
-# Pull base image 
-From tomcat:8-jre8 
+From maven:3.6.3-jdk-8
 
-# Maintainer 
-MAINTAINER "valaxytech@gmail.com" 
-COPY ./webapp.war /usr/local/tomcat/webapps
+WORKDIR /usr/src/mymaven
+
+CMD mvn clean package
